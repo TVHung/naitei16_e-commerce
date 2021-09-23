@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userDAOImpl"
+		class="com.javanaitei.phoneshop.dao.impl.UserDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="productDAOImpl" class="com.javanaitei.phoneshop.dao.impl.ProductDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+	<bean id="categoryDAOImpl" class="com.javanaitei.phoneshop.dao.impl.CategoryDAOImpl">
+		<property name="hibernateTemplate" ref="hibernateTemplate" />
+	</bean>
+<!--	<bean id="orderDAOImpl" class="com.javanaitei.phoneshop.dao.impl.OrderDAOImpl">-->
+<!--		<property name="hibernateTemplate" ref="hibernateTemplate" />-->
+<!--	</bean>-->
+<!--	<bean id="orderDetailDAOImpl" class="com.javanaitei.phoneshop.dao.impl.OrderDetailDAOImpl">-->
+<!--		<property name="hibernateTemplate" ref="hibernateTemplate" />-->
+<!--	</bean>-->
+
+</beans>

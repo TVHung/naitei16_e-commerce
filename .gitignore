@@ -22,3 +22,9 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /.metadata/
+/Servers
+/PhoneShop/.idea
+/PhoneShop/.gitignore
+/PhoneShop/target
+/PhoneShop/src/main/resources/datasources.properties
+/PhoneShop/PhoneShop.iml 

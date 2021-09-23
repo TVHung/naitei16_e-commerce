@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout-admin/base-admin-layout :: layoutAdmin(~{::title}, ~{::body})}">
+<head>
+  <title>Accounts</title>
+</head>
+<body>
+<div class="col-xl-12">
+  <div
+          class="card card-default"
+  >
+    <div
+            class="
+                card-header
+                justify-content-between
+                mb-4
+            "
+    >
+      <h2>List user</h2>
+      <div>
+        <button
+                class="
+                            text-black-50
+                            mr-2
+                            font-size-20
+                        "
+        >
+          <i class="mdi mdi-cached"></i>
+        </button>
+        <div
+          class="
+            dropdown
+            show
+            d-inline-block
+            widget-dropdown
+          "
+        >
+          <a
+                  class="
+                                dropdown-toggle
+                                icon-burger-mini
+                            "
+                  href="#"
+                  role="button"
+                  id="dropdown-product"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-display="static"
+          >
+          </a>
+          <ul
+                  class="
+                                dropdown-menu
+                                dropdown-menu-right
+                            "
+                  aria-labelledby="dropdown-product"
+          >
+            <li class="dropdown-item">
+              <a href="#"
+              >Update Data</a
+              >
+            </li>
+            <li class="dropdown-item">
+              <a href="#"
+              >Detailed Log</a
+              >
+            </li>
+            <li class="dropdown-item">
+              <a href="#"
+              >Statistics</a
+              >
+            </li>
+            <li class="dropdown-item">
+              <a href="#"
+              >Clear Data</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card-body py-0">
+      <!--/*@thymesVar id="accounts" type="sun"*/-->
+      <th:block th:each="account : ${accounts}">
+        <div class="media d-flex mb-3 col-md-4 col-sm-6" style="float: left; padding-right: 30px">
+          <div
+                  class="
+                        media-image
+                        align-self-center
+                        mr-3
+                        rounded
+                    "
+          >
+            <a href="#"
+            ><img
+                    th:src="@{/assets/admin/img/avt.png}"
+                    alt="customer image"
+                    th:width="100px"
+                    th:height="100px"
+            /></a>
+          </div>
+          <div
+                  class="
+                        media-body
+                        align-self-center
+                    "
+          >
+            <a href="#"
+            ><h6
+              class="
+                mb-3
+                text-dark
+                font-weight-medium
+              "
+              th:text="${account.userName}"
+            >
+            </h6></a>
+            <p class="d-none d-md-block" th:text="${account.email}"></p>
+            <p class="d-none d-md-block" th:text="${account.phone}"></p>
+            <p class="d-none d-md-block" th:text="${account.role == 0 ? 'User' : 'Admin'}"></p>
+          </div>
+        </div>
+        <th:block>
+    </div>
+  </div>
+</div>
+</body>
+</html>

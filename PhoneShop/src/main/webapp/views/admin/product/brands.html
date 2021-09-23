@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/layout-admin/base-admin-layout :: layoutAdmin(~{::title}, ~{::body})}">
+<head>
+    <title>Brands</title>
+    <link
+        th:href="@{/assets/admin/css/person.css}"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <div>
+        <div
+                class="
+                    card-header
+                    justify-content-between
+                "
+        >
+            <h2>Brands</h2>
+        </div>
+        <div class="">
+            <th:block th:each="brand : ${brands}">
+            <div class="card col-sm-4 col-md-2" style="float: left; padding: 10px; margin: 10px;">
+                <div
+                        class="
+                            dropdown
+                            show
+                            d-inline-block
+                            widget-dropdown
+                        "
+                >
+                    <a
+                            class="
+                                dropdown-toggle
+                                icon-burger-mini
+                            "
+                            href="#"
+                            role="button"
+                            id="dropdown-pro"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-display="static"
+                    >
+                    </a>
+                    <ul
+                            class="
+                                dropdown-menu
+                                dropdown-menu-left
+                            "
+                            aria-labelledby="dropdown-product"
+                    >
+                        <li class="dropdown-item">
+                            <a href="#"
+                            >Edit</a
+                            >
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#"
+                            >Delete</a
+                            >
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#"
+                            >Detail</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <img th:src="@{/assets/admin/img/brands/apple.png}" alt="brand" style="width:100%">
+                <div class="container" style="text-align: center">
+                    <h4><b>Apple</b></h4>
+                    <p>America</p>
+                </div>
+            </div>
+            </th:block>
+        </div>
+    </div>
+</body>
+</html>
